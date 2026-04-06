@@ -41,11 +41,11 @@ cd CheckSum_tool
 chmod +x script_checkSum.sh
 ```
 
-![Clone e permissão de execução](gitclone.png)
+![Clone e permissão de execução](checksum/gitclone.png)
 
 Confirme que as permissões foram aplicadas corretamente com `ls -l`:
 
-![Tornando executável](executavel.png)
+![Tornando executável](checksum/executavel.png)
 
 ---
 
@@ -90,11 +90,11 @@ Antes de verificar um arquivo, você precisa do hash oficial fornecido pelo dese
 
 No site oficial do VS Code ([code.visualstudio.com/download](https://code.visualstudio.com/download)), role até o final da página e clique em **"See SHA-256 Hashes"**:
 
-![Rodapé da página de download do VS Code](Captura_de_tela_2026-03-29_170824.png)
+![Rodapé da página de download do VS Code](checksum/Captura_de_tela_2026-03-29_170824.png)
 
 Isso abre uma tabela com o hash de cada versão disponível. Para Linux .deb (x64), copie o hash correspondente:
 
-![Tabela de hashes SHA-256 do VS Code](Captura_de_tela_2026-03-29_171208.png)
+![Tabela de hashes SHA-256 do VS Code](checksum/Captura_de_tela_2026-03-29_171208.png)
 
 > 💡 **Dica:** Prefira sempre buscar o hash na fonte oficial. Nunca confie em hashes publicados em fóruns, sites espelho ou repositórios de terceiros.
 
@@ -121,7 +121,7 @@ curl -s "https://update.code.visualstudio.com/api/update/linux-deb-x64/stable/la
   | python3 -c "import sys,json; d=json.load(sys.stdin); print(d['sha256hash'])"
 ```
 
-![Baixando VS Code e obtendo hash](instalandovscode.png)
+![Baixando VS Code e obtendo hash](checksum/instalandovscode.png)
 
 ---
 
@@ -133,7 +133,7 @@ Quando o hash local bate com o hash oficial:
 ./script_checkSum.sh ~/Desktop/vscode.deb
 ```
 
-![Validação com sucesso - MATCH](validacaometodo2.png)
+![Validação com sucesso - MATCH](checksum/validacaometodo2.png)
 
 ---
 
@@ -141,7 +141,7 @@ Quando o hash local bate com o hash oficial:
 
 Quando os hashes divergem, o script alerta e recomenda novo download:
 
-![Validação com falha - MISMATCH](Captura_de_tela_2026-03-29_165804.png)
+![Validação com falha - MISMATCH](checksum/Captura_de_tela_2026-03-29_165804.png)
 
 > ⚠️ **Nunca execute um arquivo que falhou na verificação de integridade.**
 
